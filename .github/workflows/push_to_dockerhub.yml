@@ -1,5 +1,7 @@
 name: Publish Docker image
-on: [push]
+on:
+  release:
+    types: [published]
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -8,9 +10,10 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: geertvangeest/test_actions
+          context: docker
           tag_with_ref: true

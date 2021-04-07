@@ -16,6 +16,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: geertvangeest/test_actions
           path: docker
+          tags: latest
           tag_with_ref: true
 
 # name: Publish Docker image

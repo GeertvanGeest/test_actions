@@ -5,6 +5,7 @@ on:
 
 jobs:
   job1:
+    name: job1
     runs-on: ubuntu-latest
     - name: checkout
       uses: actions/checkout@v3

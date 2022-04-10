@@ -7,29 +7,29 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: get date
-        run: date
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: get date
+      run: date
   job2:
     runs-on: windows-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: get date
-        run: Get-Date
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: get date
+      run: Get-Date
   job3:
     runs-on: macos-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: get date
-        run: date 
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: get date
+      run: date 
   job4:
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: get date
-        run: date
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: get date
+      run: date

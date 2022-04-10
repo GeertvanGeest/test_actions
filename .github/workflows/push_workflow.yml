@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3
+    - name: generate file
       run: echo this is test > ${{ env.TEST_FILE }}
     - name: upload artifect
       uses: actions/upload-artifact@v1.0.0

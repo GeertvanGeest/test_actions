@@ -7,12 +7,14 @@ env:
   TEST_FILE : "testfile.txt"
 
 jobs:
-  steps:
-  - name: checkout
-    uses: actions/checkout@v3
-    run: echo this is test > ${{ env.TEST_FILE }}
-  - name: upload artifect
-    uses: actions/upload-artifact@v1.0.0
-    with:
-      name: ${{ env.TEST_FILE }}
-      path: ./${{ env.TEST_FILE }}
+  test_artifact:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+      run: echo this is test > ${{ env.TEST_FILE }}
+    - name: upload artifect
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: ${{ env.TEST_FILE }}
+        path: ./${{ env.TEST_FILE }}

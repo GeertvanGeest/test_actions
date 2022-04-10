@@ -5,28 +5,31 @@ on:
 
 jobs:
   job1:
-    name: job1
     runs-on: ubuntu-latest
-    - name: checkout
-      uses: actions/checkout@v3
-    - name: get date
-      run: date
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: get date
+        run: date
   job2:
     runs-on: windows-latest
-    - name: checkout
-      uses: actions/checkout@v3
-    - name: get date
-      run: Get-Date
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: get date
+        run: Get-Date
   job3:
     runs-on: macos-latest
-    - name: checkout
-      uses: actions/checkout@v3
-    - name: get date
-      run: date 
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: get date
+        run: date 
   job4:
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
-    - name: checkout
-      uses: actions/checkout@v3
-    - name: get date
-      run: date
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: get date
+        run: date

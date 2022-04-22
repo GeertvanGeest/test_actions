@@ -2,6 +2,9 @@ name: cicd python
 
 on: [push]
 
+env: 
+  ARTIFACT_NAME : artifact1
+
 jobs:
   test:
     name: run the test
@@ -15,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/upload-artifact@v1.0.0
+      - uses: actions/upload-artifact@v2
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .

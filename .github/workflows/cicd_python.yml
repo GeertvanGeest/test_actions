@@ -6,16 +6,16 @@ jobs:
   test:
     name: run the test
     runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - run: python hello.py
+    steps:
+      - uses: actions/checkout@v2
+      - run: python hello.py
   build:
     needs: [test]
     name: build something
     runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/upload-artifact@v1.0.0
-          with:
-            name: ${{ env.ARTIFACT_NAME }}
-            path: .
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v1.0.0
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: .
